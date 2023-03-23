@@ -1,0 +1,216 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=114;
+	taxlabels
+	'AAB09442.1'[&!color=#990099]
+	'AAC32197.1'[&!color=#666600]
+	'AAC72747.1'[&!color=#00ff00]
+	'AAF02494.1_alcohol_oxidase_1_Ogataea_methanolica'[&!color=#0000ff]
+	'AAF59929.2'[&!color=#990099]
+	'AAO13382.1_pyranose_oxidase_Peniophora_sp._SG'[&!color=#996600]
+	'ABI14440.1_alcohol_oxidase_Gloeophyllum_trabeum'[&!color=#0000ff]
+	'ACR43926.1_cholesterol_oxidase_Rhodococcus_sp._CECT_3014'
+	'AFY89934.1_Cholesterol_oxidase_Chroococcidiopsis_thermalis_PCC_7203'
+	'ALS87661.1'[&!color=#ff0000]
+	'BAD12079.1_pyranose_oxidase_Lyophyllum_shimeji'[&!color=#996600]
+	'BAD32781.1'[&!color=#cc9900]
+	Bjead_114902
+	Bjead_114954
+	Bjead_143000
+	Bjead_156054
+	Bjead_171002
+	Bjead_171059
+	Bjead_175513
+	Bjead_183896
+	Bjead_227734
+	Bjead_241975
+	Bjead_245049
+	Bjead_245297
+	Bjead_34622
+	Bjead_34705
+	Bjead_45135
+	Bjead_45314
+	Bjead_465711
+	Bjead_52991
+	Bjead_71431
+	Cersu_107938
+	Cersu_117387
+	Cersu_117749
+	Cersu_118493
+	Cersu_137959
+	Cersu_139982
+	Cersu_80773
+	Cersu_84544
+	Cersu_84792
+	Cersu_86996
+	Dicsq_102587
+	Dicsq_103879
+	Dicsq_149587
+	Dicsq_153749
+	Dicsq_153908
+	Dicsq_157363
+	Dicsq_160139
+	Dicsq_160546
+	Dicsq_171752
+	Dicsq_171858
+	Dicsq_173648
+	Dicsq_181599
+	Dicsq_182736
+	Dicsq_86071
+	Dicsq_96414
+	Fompi_1030775
+	Fompi_1031171
+	Fompi_156775
+	Fompi_40728
+	Fompi_90445
+	Gansp_114505
+	Gansp_116436
+	Gansp_116439
+	Gansp_117498
+	Gansp_124428
+	Gansp_130042
+	Gansp_130292
+	Gansp_138009
+	Gansp_67648
+	Gansp_67654
+	Gansp_85135
+	Gansp_86428
+	Phchr_2911725
+	Phchr_2977507
+	Phchr_2984061
+	Phchr_2984883
+	Phchr_3004321
+	Phchr_3030424
+	Phchr_3040167
+	Phchr_6199
+	Phlbr_123747
+	Phlbr_128210
+	Phlbr_128980
+	Phlbr_131358
+	Phlbr_157963
+	Phlbr_157964
+	Phlbr_160653
+	Phlbr_164178
+	Phlbr_22550
+	Phlbr_29466
+	Phlbr_7956
+	Pospl_118723
+	Pospl_126217
+	Pospl_129158
+	Pospl_44654
+	Pospl_54008
+	Pospl_55496
+	Pospl_55972
+	Pospl_58266
+	Pospl_91693
+	Wolco_121505
+	Wolco_132654
+	Wolco_24953
+	Wolco_25722
+	'jgi_Trave1_133945_e_gw1.12.36.1'[&!color=#000000]
+	'jgi_Trave1_176148_estExt_Genewise1Plus.C_170067'[&!color=#000000]
+	'jgi_Trave1_40237_fgenesh1_pm.12_300'[&!color=#000000]
+	'jgi_Trave1_73596_estExt_Genemark1.C_9_t10406'[&!color=#000000]
+	'jgi|Trave1|144610|estExt_Genewise1.C_3_t60182'
+	'jgi|Trave1|167157|estExt_Genewise1Plus.C_5_t30403'
+	'jgi|Trave1|170473|estExt_Genewise1Plus.C_8_t20067'
+	'jgi|Trave1|174721|estExt_Genewise1Plus.C_13_t10247'
+	'jgi|Trave1|43286|gm1.2170_g'
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (((((((((((((((Bjead_114954[&!color=#00ff00]:0.207637,Bjead_183896[&!color=#00ff00]:0.189083)[&label=1.0,!color=#00ff00]:0.069018,Bjead_171059[&!color=#00ff00]:0.19917)[&label=0.98,!color=#00ff00]:0.090349,(Bjead_52991[&!color=#00ff00]:0.294687,(Bjead_156054[&!color=#00ff00]:0.304877,Bjead_114902[&!color=#00ff00]:0.205681)[&label=0.32,!color=#00ff00]:0.024612)[&label=0.54,!color=#00ff00]:0.041265)[&label=0.88,!color=#00ff00]:0.084182,((Bjead_71431[&!color=#00ff00]:0.176473,Bjead_245297[&!color=#00ff00]:0.198161)[&label=0.94,!color=#00ff00]:0.069876,(Bjead_245049[&!color=#00ff00]:0.201053,Bjead_171002[&!color=#00ff00]:0.255482)[&label=1.0,!color=#00ff00]:0.176703)[&label=0.92,!color=#00ff00]:0.084426)[&label=0.44,!color=#00ff00]:0.042943,(Dicsq_86071[&!color=#00ff00]:0.288664,Phchr_2911725[&!color=#00ff00]:0.255637)[&label=0.5,!color=#00ff00]:0.049901)[&label=0.52,!color=#00ff00]:0.037524,Phchr_3040167[&!color=#00ff00]:0.360467)[&label=1.0,!color=#00ff00]:0.13082,(Phlbr_164178[&!color=#00ff00]:0.293559,(Phchr_6199[&!color=#00ff00]:0.470797,Phlbr_131358[&!color=#00ff00]:0.244004)[&label=1.0,!color=#00ff00]:0.173381)[&label=1.0,!color=#00ff00]:0.152931)[&label=0.66,!color=#00ff00]:0.061813,(Phlbr_22550[&!color=#00ff00]:0.43797,'AAC72747.1'[&!color=#00ff00]:0.424908)[&label=0.6,!color=#00ff00]:0.093402)[&label=0.34]:0.050275,(((((Pospl_55496:0.040861,Pospl_44654:0.015038)[&label=0.58]:0.004272,Pospl_58266:0.004116)[&label=1.0]:0.330643,Pospl_54008:0.207012)[&label=0.86]:0.067633,Fompi_40728:0.353266)[&label=0.4]:0.04995,((Cersu_117387:0.166899,Cersu_84544:0.184918)[&label=0.86]:0.06997,(Cersu_137959:0.257864,(Cersu_107938:0.182746,Cersu_118493:0.236551)[&label=1.0]:0.121889)[&label=0.62]:0.044784)[&label=1.0]:0.119151)[&label=1.0]:0.118272)[&label=0.38]:0.072427,((Dicsq_182736[&!color=#ff0033]:0.112961,Gansp_117498[&!color=#ff0033]:0.115274)[&label=0.98,!color=#ff0033]:0.090428,('jgi_Trave1_176148_estExt_Genewise1Plus.C_170067'[&!color=#ff0033]:0.089037,'ALS87661.1'[&!color=#ff0033]:0.130311)[&label=0.84,!color=#ff0033]:0.029699)[&label=1.0,!color=#ff0033]:0.320604)[&label=0.26]:0.050069,((('jgi_Trave1_133945_e_gw1.12.36.1'[&!color=#ff0033]:0.083581,'jgi_Trave1_40237_fgenesh1_pm.12_300'[&!color=#ff0033]:0.147512)[&label=1.0,!color=#ff0033]:0.163807,Dicsq_171858[&!color=#ff0033]:0.25212)[&label=0.66,!color=#ff0033]:0.059004,(Gansp_130042[&!color=#ff0033]:0.206998,(Gansp_138009[&!color=#ff0033]:0.169472,(Dicsq_103879[&!color=#ff0033]:0.179543,Dicsq_96414[&!color=#ff0033]:0.104773)[&label=0.9,!color=#ff0033]:0.072721)[&label=0.9,!color=#ff0033]:0.053306)[&label=1.0,!color=#ff0033]:0.138098)[&label=1.0,!color=#ff0033]:0.200635)[&label=0.54]:0.051868,(((Dicsq_171752[&!color=#ff0033]:0.024247,Gansp_124428[&!color=#ff0033]:0.142656)[&label=1.0,!color=#ff0033]:0.11673,Dicsq_160139[&!color=#ff0033]:0.181056)[&label=1.0,!color=#ff0033]:0.304143,((Dicsq_102587[&!color=#ff0033]:0.108808,Gansp_67648[&!color=#ff0033]:0.091046)[&label=1.0,!color=#ff0033]:0.140218,((Dicsq_160546[&!color=#ff0033]:0.121045,Gansp_85135[&!color=#ff0033]:0.140692)[&label=0.66,!color=#ff0033]:0.049448,(Dicsq_153908[&!color=#ff0033]:0.167246,Gansp_67654[&!color=#ff0033]:0.169158)[&label=0.78,!color=#ff0033]:0.054611)[&label=0.98,!color=#ff0033]:0.106914)[&label=0.98,!color=#ff0033]:0.208085)[&label=0.92]:0.117688)[&label=0.86]:0.326647,('AFY89934.1_Cholesterol_oxidase_Chroococcidiopsis_thermalis_PCC_7203':1.782914,(Phlbr_160653[&!color=#ffcc00]:0.162586,('BAD32781.1'[&!color=#ffcc00]:0.309228,(Bjead_45135[&!color=#ffcc00]:0.227058,(Phchr_3030424[&!color=#ffcc00]:0.157427,(Cersu_84792[&!color=#ffcc00]:0.203781,((Gansp_86428[&!color=#ffcc00]:0.074523,Dicsq_153749[&!color=#ffcc00]:0.079474)[&label=0.82,!color=#ffcc00]:0.028488,('AAC32197.1'[&!color=#ffcc00]:0.070707,'jgi_Trave1_73596_estExt_Genemark1.C_9_t10406'[&!color=#ffcc00]:0.110994)[&label=1.0,!color=#ffcc00]:0.046563)[&label=0.9,!color=#ffcc00]:0.03953)[&label=0.8,!color=#ffcc00]:0.080176)[&label=0.68,!color=#ffcc00]:0.075065)[&label=0.5,!color=#ffcc00]:0.039365)[&label=0.56,!color=#ffcc00]:0.092322)[&label=1.0,!color=#ffcc00]:1.038637)[&label=0.16]:0.209168)[&label=0.18]:0.180087,('AAF59929.2'[&!color=#9933ff]:0.250205,'AAB09442.1'[&!color=#9933ff]:0.258136)[&label=1.0,!color=#9933ff]:0.91764)[&label=0.32]:0.114458,(((((Phlbr_123747[&!color=#cc6600]:0.354384,Phchr_2977507[&!color=#cc6600]:0.316738)[&label=0.6,!color=#cc6600]:0.092867,Bjead_34622[&!color=#cc6600]:0.267979)[&label=1.0,!color=#cc6600]:0.2025,'BAD12079.1_pyranose_oxidase_Lyophyllum_shimeji'[&!color=#cc6600]:0.350586)[&label=1.0,!color=#cc6600]:0.200292,('AAO13382.1_pyranose_oxidase_Peniophora_sp._SG'[&!color=#cc6600]:0.025804,'jgi|Trave1|174721|estExt_Genewise1Plus.C_13_t10247'[&!color=#cc6600]:0.01923)[&label=1.0,!color=#cc6600]:0.515275)[&label=1.0,!color=#cc6600]:1.347119,((((((((Fompi_1030775[&!color=#0066ff]:0.055172,Pospl_118723[&!color=#0066ff]:0.024167)[&label=0.84,!color=#0066ff]:0.015534,Wolco_24953[&!color=#0066ff]:0.039298)[&label=0.92,!color=#0066ff]:0.025669,Cersu_80773[&!color=#0066ff]:0.032001)[&label=0.72,!color=#0066ff]:0.021981,Phlbr_128980[&!color=#0066ff]:0.069794)[&label=0.26,!color=#0066ff]:0.014611,('ABI14440.1_alcohol_oxidase_Gloeophyllum_trabeum'[&!color=#0066ff]:0.05257,(Bjead_34705[&!color=#0066ff]:0.053639,Phchr_3004321[&!color=#0066ff]:0.040108)[&label=0.54,!color=#0066ff]:0.015689)[&label=0.18,!color=#0066ff]:0.008367)[&label=0.4,!color=#0066ff]:0.01589,('jgi|Trave1|144610|estExt_Genewise1.C_3_t60182'[&!color=#0066ff]:0.039846,(Dicsq_181599[&!color=#0066ff]:0.020161,Gansp_114505[&!color=#0066ff]:0.060632)[&label=0.88,!color=#0066ff]:0.021856)[&label=0.68,!color=#0066ff]:0.012314)[&label=1.0,!color=#0066ff]:0.360787,'AAF02494.1_alcohol_oxidase_1_Ogataea_methanolica'[&!color=#0066ff]:0.457983)[&label=1.0,!color=#0066ff]:0.227525,((((((Fompi_156775[&!color=#0066ff]:0.145249,Fompi_1031171[&!color=#0066ff]:0.225191)[&label=1.0,!color=#0066ff]:0.108932,Wolco_25722[&!color=#0066ff]:0.250323)[&label=0.24,!color=#0066ff]:0.044765,(Wolco_132654[&!color=#0066ff]:0.340181,Pospl_91693[&!color=#0066ff]:0.245011)[&label=0.38,!color=#0066ff]:0.061485)[&label=0.08,!color=#0066ff]:0.041805,(Fompi_90445[&!color=#0066ff]:0.267574,Wolco_121505[&!color=#0066ff]:0.256008)[&label=0.14,!color=#0066ff]:0.038046)[&label=0.3,!color=#0066ff]:0.020393,(Pospl_55972[&!color=#0066ff]:0.301181,(Pospl_126217[&!color=#0066ff]:0.003367,Pospl_129158[&!color=#0066ff]:0.0)[&label=1.0,!color=#0066ff]:0.2483)[&label=1.0,!color=#0066ff]:0.202434)[&label=0.54,!color=#0066ff]:0.045077,((((Dicsq_157363[&!color=#0066ff]:0.129364,Gansp_130292[&!color=#0066ff]:0.122945)[&label=1.0,!color=#0066ff]:0.105575,('jgi|Trave1|167157|estExt_Genewise1Plus.C_5_t30403'[&!color=#0066ff]:0.207989,'jgi|Trave1|170473|estExt_Genewise1Plus.C_8_t20067'[&!color=#0066ff]:0.166863)[&label=0.78,!color=#0066ff]:0.051895)[&label=1.0,!color=#0066ff]:0.163767,Cersu_139982[&!color=#0066ff]:0.241184)[&label=0.48,!color=#0066ff]:0.055263,(((((Dicsq_149587[&!color=#0066ff]:0.104246,Gansp_116439[&!color=#0066ff]:0.124226)[&label=1.0,!color=#0066ff]:0.119665,(Dicsq_173648[&!color=#0066ff]:0.162379,Gansp_116436[&!color=#0066ff]:0.127027)[&label=1.0,!color=#0066ff]:0.091094)[&label=0.96,!color=#0066ff]:0.091352,'jgi|Trave1|43286|gm1.2170_g'[&!color=#0066ff]:0.287374)[&label=1.0,!color=#0066ff]:0.196791,((Cersu_117749[&!color=#0066ff]:0.129326,Cersu_86996[&!color=#0066ff]:0.14217)[&label=1.0,!color=#0066ff]:0.283524,(Phlbr_157963[&!color=#0066ff]:0.183707,Phlbr_157964[&!color=#0066ff]:0.174897)[&label=1.0,!color=#0066ff]:0.308115)[&label=0.48,!color=#0066ff]:0.072545)[&label=0.3,!color=#0066ff]:0.063232,(((Bjead_227734[&!color=#0066ff]:0.196069,Phchr_2984883[&!color=#0066ff]:0.105273)[&label=0.98,!color=#0066ff]:0.051131,Phlbr_7956[&!color=#0066ff]:0.111987)[&label=1.0,!color=#0066ff]:0.229958,(Phlbr_128210[&!color=#0066ff]:0.322263,(((Bjead_241975[&!color=#0066ff]:0.124199,Phlbr_29466[&!color=#0066ff]:0.157346)[&label=0.5,!color=#0066ff]:0.047412,Phchr_2984061[&!color=#0066ff]:0.159861)[&label=0.98,!color=#0066ff]:0.085469,(Bjead_143000[&!color=#0066ff]:0.076033,(Bjead_45314[&!color=#0066ff]:0.07708,(Bjead_175513:0.092186,Bjead_465711:0.121375)[&label=1.0,!color=#0066ff]:0.126163)[&label=0.36,!color=#0066ff]:0.03198)[&label=1.0,!color=#0066ff]:0.258803)[&label=0.7,!color=#0066ff]:0.056689)[&label=0.94,!color=#0066ff]:0.093038)[&label=0.58,!color=#0066ff]:0.055089)[&label=0.12,!color=#0066ff]:0.031918)[&label=0.04,!color=#0066ff]:0.024841)[&label=0.98,!color=#0066ff]:0.304888)[&label=0.98]:0.429045)[&label=0.24]:0.074619,'ACR43926.1_cholesterol_oxidase_Rhodococcus_sp._CECT_3014':2.98569);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=57;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute="label";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="Node ages";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=false;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=194;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=11;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+
