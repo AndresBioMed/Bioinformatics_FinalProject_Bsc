@@ -1,0 +1,251 @@
+
+var __http_regexp = /http\:.+/i;
+
+navigateTo=function(url) {
+	if (url.match(__http_regexp)) {
+		var newLocation = url;
+	} else {
+		var newLocation = window.location.protocol+"//"+window.location.host+url;
+	}
+	document.location = newLocation;
+}
+
+var defaultSpinnerOpts = {
+		lines: 13 // The number of lines to draw
+		, length: 24 // The length of each line
+		, width: 10 // The line thickness
+		, radius: 24 // The radius of the inner circle
+		, scale: 1 // Scales overall size of the spinner
+		, corners: 1 // Corner roundness (0..1)
+		, color: '#574200' // #rgb or #rrggbb or array of colors
+		, opacity: 0.15 // Opacity of the lines
+		, rotate: 0 // The rotation offset
+		, direction: 1 // 1: clockwise, -1: counterclockwise
+		, speed: 2 // Rounds per second
+		, trail: 60 // Afterglow percentage
+		, fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
+		, zIndex: 2e9 // The z-index (defaults to 2000000000)
+		, className: 'spinner' // The CSS class to assign to the spinner
+		, top: '50%' // Top position relative to parent
+		, left: '50%' // Left position relative to parent
+		, shadow: false // Whether to render a shadow
+		, hwaccel: true // Whether to use hardware acceleration
+		, position: 'fixed' // Element positioning	
+}
+
+var defaultSpinner = new Spinner(defaultSpinnerOpts);
+
+processInnerHtml=function(u) {
+	switch (u.selectorType) {
+	case "byId":
+		var e = document.getElementById(u.selector);
+		e.innerHTML = u.actionValue;
+		break;
+	case "jQuery":
+		var o = jQuery(u.selector).html(u.actionValue);
+		break;
+	}
+}
+
+isTrue=function(value){
+    if (typeof(value) == 'string'){
+        value = value.toLowerCase();
+    }
+    switch(value){
+        case true:
+        case "true":
+        case 1:
+        case "1":
+        case "on":
+        case "yes":
+            return true;
+        default: 
+            return false;
+    }
+}
+
+setValue=function(e,u) {
+	if (e) {
+		switch (e.type) {
+		case "checkbox":
+		case "radio":
+			e.checked = isTrue(u.actionValue);
+			break;
+		default:
+			e.value = u.actionValue;
+		}
+	}
+}
+
+setDisabled=function(u) {
+	switch (u.selectorType) {
+	case "byId":
+		var e = document.getElementById(u.selector);
+		e.disabled=isTrue(u.actionValue);
+		break;
+	case "jQuery":
+		var o = jQuery(u.selector);
+		o.each(function(i,e) {
+			e.disabled=isTrue(u.actionValue);
+		});
+		break;
+	}
+}
+
+processInputValue=function(u) {
+	switch (u.selectorType) {
+	case "byId":
+		var e = document.getElementById(u.selector);
+		setValue(e,u);
+		break;
+	case "jQuery":
+		var o = jQuery(u.selector);
+		o.each(function(i,e) {
+			setValue(e,u);
+		});
+		break;
+	}
+}
+
+getJQueryReference=function(u) {
+	switch (u.selectorType) {
+	case "byId": return jQuery("#"+u.selector);
+	case "jQuery": return jQuery(u.selector);
+	}
+}
+
+processAddClass=function(u) {
+	var o = getJQueryReference(u);
+	if (o) {
+		o.addClass(u.actionValue);
+	}
+}
+
+processRemoveClass=function(u) {
+	var o = getJQueryReference(u);
+	if (o) {
+		o.removeClass(u.actionValue);
+	}
+}
+
+processShow=function(u) {
+	var o = getJQueryReference(u);
+	if (o) {
+		o.show();
+	}
+}
+
+processHide=function(u) {
+	var o = getJQueryReference(u);
+	if (o) {
+		o.hide();
+	}
+}
+
+processActionResponseItem=function(u) {
+	switch (u.actionType) {
+	case "innerHtml": processInnerHtml(u); break;
+	case "inputValue": processInputValue(u); break;
+	case "setDisabled": setDisabled(u); break;
+	case "addClass": processAddClass(u); break;
+	case "removeClass": processRemoveClass(u); break;
+	case "show": processShow(u); break;
+	case "hide": processHide(u); break;
+	case "locationHref":
+		location.href = u.actionValue;
+		break;
+	case "reload":
+		location.reload();
+		break;
+	case "evalExpression":
+		eval(u.actionValue);
+		break;
+	}
+}
+
+processActionResponse=function(r) {
+	for (index=0; index<r.length; ++index) {
+		processActionResponseItem(r[index]);
+	}
+}
+
+
+executeActionAndProcessResponse=function(method,url,data,success,error,spinner,spinnerTarget)  {
+	if (spinner!=null && spinnerTarget!=null) {
+		spinner.spin(spinnerTarget);
+	}
+	jQuery.ajax({
+		type: method,
+		url: url,
+		data: data,
+		success: 
+		function(resp,status,xhr){
+			if (xhr.status>=200 && xhr.status<300) {
+				if (resp && resp.items && xhr.status!=204 && xhr.status!=205) {
+					processActionResponse(resp.items);
+				}
+				if (success!=null) {
+					success();
+				}
+			}
+			if (spinner!=null) {
+				spinner.stop();
+			}
+		},
+		error:
+		function(resp,status,xhr) {
+			if (spinner!=null) {
+				spinner.stop();
+			}
+			if (error!=null) {
+				error();
+			}
+		}
+	});	
+}
+
+default_tooltip_template = '<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>';
+
+setup_default_tooltip = function() {
+	jQuery("[data-toggle=\"tooltip\"]").tooltip({
+		animation: true,
+		html: false,
+		trigger: "hover focus",
+		delay: 250,
+		placement: "auto",
+		template: default_tooltip_template
+	});
+	jQuery(".tltp").tooltip({
+		animation: true,
+		html: false,
+		trigger: "hover focus",
+		delay: 250,
+		placement: "auto",
+		template: default_tooltip_template
+	});
+}
+
+setup_tooltip = function(sel) {
+	jQuery(sel).tooltip({
+		animation: true,
+		delay: 250,
+		placement: "auto",
+		template: default_tooltip_template
+	});
+}
+
+setup_tooltip_with_html = function(sel) {
+	jQuery(sel).tooltip({
+		animation: true,
+		html: true,
+		trigger: "click hover focus",
+		delay: 250,
+		placement: "auto",
+		template: default_tooltip_template
+	});
+}
+
+
+//jQuery(document).ready(function() {
+//	jQuery.noconflict();
+//});

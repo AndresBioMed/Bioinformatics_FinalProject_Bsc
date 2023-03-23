@@ -1,0 +1,30 @@
+
+function toggleSvgCheckboxState(id) {
+	var c1 = jQuery('#'+id);
+	var c2 = jQuery('#'+id+'_p');
+	if (c1.attr('class').indexOf('not_selected')>=0) {
+		c1.attr('class','svg_checkbox selected');
+		c2.attr('class','svg_checkbox_p selected');
+		return true;
+	} else {
+		c1.attr('class','svg_checkbox not_selected');
+		c2.attr('class','svg_checkbox_p not_selected');
+		return false;
+	}
+}
+
+function selectOrDeselectSvgCheckboxState(id,selected) {
+	var c1 = jQuery('#'+id);
+	var c2 = jQuery('#'+id+'_p');
+	if (selected) {
+		c1.attr('class','svg_checkbox selected');
+		c2.attr('class','svg_checkbox_p selected');
+	} else {
+		c1.attr('class','svg_checkbox not_selected');
+		c2.attr('class','svg_checkbox_p not_selected');
+	}
+}
+
+function svgTextLinkClick(url) {
+	navigateTo(url);
+}

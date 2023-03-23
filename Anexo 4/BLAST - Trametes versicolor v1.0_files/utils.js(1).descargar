@@ -1,0 +1,18 @@
+
+function help(helpPage) { 
+	var poundPosition = helpPage.indexOf("#");
+	var url;
+	
+	if (poundPosition == -1) {
+		url = "/help/" + helpPage + "?referer=" + escape(location.href);
+	}
+	else {
+		var page = helpPage.substr(0, poundPosition)
+		var name = helpPage.substr(poundPosition, helpPage.length-1)
+		url = "/help/" + page + "?referer=" + escape(location.href) + name;
+	}
+
+	window.open(url, "small", 'height=500,width=800,status=0,titlebar=0,toolbar=1,location=0,menubar=0,scrollbars=1,resizable=1');
+	
+}
+

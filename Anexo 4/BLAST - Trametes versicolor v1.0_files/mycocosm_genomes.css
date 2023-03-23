@@ -1,0 +1,112 @@
+/* style for the main subnavigation: search, BLAST, Browse etc.*/
+
+/* variables definitions */
+
+:root {
+	--menu-bg-color: hsla(35, 100%, 97%, 1);
+	--menu-highlite-bg-color: hsla(30, 40%, 41%, 1);
+	--menu-text-color: hsla(274, 52%, 28%, 1);
+	--menu-highlite-text-color: white;
+	--menu-border-color: hsla(30, 62%, 44%, 1);
+	--menu-border: 1px solid hsla(30, 62%, 44%, 1);
+	--menu-disabled-text-color: grey;
+}
+
+
+#organism_navigation {
+	flex-direction: row;
+}
+
+.menu_holder {
+	background-color: var(--menu-bg-color);
+	border-top: var(--menu-border);
+	border-bottom: var(--menu-border);
+}
+
+.menu_group a:link, .menu_group a:visited {
+	text-decoration: none;
+	color: var(--menu-text-color);
+}
+
+.menu_group a {
+	background: unset;
+	color: var(--menu-text-color);
+	text-decoration: none;
+}
+.menu_group a:hover{
+	color: var(--menu-highlite-text-color);
+	background-color: var(--menu-highlite-bg-color);
+	text-decoration: none;
+}
+.menu_group a:focus{
+	color: var(--menu-highlite-text-color);
+	background-color: var(--menu-highlite-bg-color);
+}
+
+.menu_group a.selected {
+	color: var(--menu-highlite-text-color);
+	background-color: var(--menu-highlite-bg-color);
+}
+
+.menu_group .disabled a:link {
+	text-decoration: none;
+	color: var(--menu-disabled-text-color); 
+}
+
+.menu_group li.disabled {
+    background: unset;
+}
+
+.menu_group ul li a.menu_help {
+	text-decoration:none;
+	color:#BA0B12;
+}
+.menu_group ul li a.menu_help:hover {
+	color: var(--menu-highlite-text-color);
+}
+/* end of style for the main subnavigation: search, BLAST, Browse etc.*/
+
+.download {
+	font-size:1em;
+	font-family: Arial, Helvetica, sans-serif;
+	/*margin-left:10px;*/
+}
+.download p {
+	font-style:normal;
+	margin-left:10px;
+}
+.download h2 {
+	font-weight:bold;
+	font-style:normal;
+	font-size: 1.2em;
+}
+.download h3 {
+	font-style:italic;
+	font-weight:bold;
+	font-size: 1.1em;
+
+}
+.download h4 {
+	font-style:italic;
+	font-weight:bold;
+	font-size: 1em;
+
+}
+
+.navigation-menu {
+	padding: 0.5rem 0;
+	margin: 0.125rem 0 0;
+	text-align: left;
+	list-style: none;
+	background-clip: padding-box;
+	border: var(--menu-border);
+	border-radius: 0;
+	background-color: var(--menu-bg-color);
+}
+
+.navigation-menu-caret {
+	border-color: var(--menu-text-color);
+}
+
+
+

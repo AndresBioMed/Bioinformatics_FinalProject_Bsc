@@ -1,0 +1,33 @@
+function createJgiCookie(name,value) {
+	createCookie(name, value, 0, "jgi-psf.org");
+	createCookie(name, value, 0, "jgi.doe.gov");
+	createCookie(name, value, 0, "nersc.gov");
+}
+
+function createCookie(name,value,days,domain) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	var c = name+"="+value+expires+"; path=/";
+	if( domain )
+		c += ";domain=" + domain + ";";
+	document.cookie = c;
+}
+
+function readCookie(name) {
+	var cookies = document.cookie.split(';');
+	for(var i=0; i < cookies.length; ++i) {
+		var c = cookies[i];
+		var m = c.match(/(\w+)=\"?([^"]+)\"?/i);
+		// alert("Scanning cookie: " + c + "\nLooking for " + name + "\nFound \n\nm[0]=" + m[0] + "\nm[1]=" + m[1] + "\nm[2]=" + m[2]);
+		if( m != null && m.length > 1 && m[1] == name )
+			return unescape(m[2]);
+	}
+	return null;
+}
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}

@@ -1,0 +1,29 @@
+//<!--
+if ((navigator.appName.indexOf("Microsoft Internet Explorer") != -1) && (parseInt(navigator.appVersion.substr(navigator.appVersion.search("MSIE")+5)) <= 8 )) {
+   document.write('     <!-- Setup Stylesheets -->');
+   document.write('		<!-- For IE 8 or earlier -->');
+   document.write('        <!--[if lte IE 8]>');
+   document.write('        <style type="text/css" media="all">');
+   document.write('        /*<![CDATA[*/');
+   document.write('        body { font-size: 78%;}');
+   document.write('        .orgSelectBox { width:29em;}');
+   document.write('        .pageSelectBox { width:6em;}');
+   document.write('        .kingdomSelectBox { width:11em;}');
+   document.write('        .header_top { margin-top:0;}');
+   document.write('       .menu_group ul li a,.menu_group ul li a.selected,.menu_group ul li .disabled  { line-height:1.32em;}');
+   document.write('        div #browser_nav { padding-top: 0.55em;padding-bottom: 0}');
+   document.write('        legend { position: relative; left: 0.75em; top: -0.75em;}');
+   document.write('        fieldset ol {padding-top: 0;}');
+//<!--   document.write('        .together input {padding-top: 0;}');//-->
+   document.write('        #browser_nav fieldset {position: relative;}');
+   document.write('			div.advanced_track_controls_header {background-color: #fff;	border-top: 0px;}');
+   document.write('			.track_controls td{	vertical-align:top;}');
+   document.write('			.secondary_content{	line-height:19px;}');
+   document.write('			.configuration_applet {width:500px;}');
+   document.write('			.position_relative {z-index:50;}');
+   document.write('			.position_relative a{z-index:-1;}');
+   document.write('        /*]]>*/');
+   document.write('        </style>');
+   document.write('        <![endif]-->'); 
+}
+// -->  

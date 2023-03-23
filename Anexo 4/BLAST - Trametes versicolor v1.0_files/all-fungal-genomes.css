@@ -1,0 +1,82 @@
+.stat {
+	background-color: #d7dde4;
+	padding: 0px;
+	font-size:1em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.stat td {
+	padding: 3px;
+	border: 1px solid #d7dde4;
+}
+
+table.stat{
+	background-color: #d7dde4;
+	border: 1px solid #d7dde4;
+	padding: 0px;
+	font-size: 1em;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.headrow {
+	background-color: #daebff;
+}
+
+.subheadrow {
+	background-color: #daebff;
+	font-weight:normal;
+	font-style:italic;
+}
+
+.evenrow {
+	background-color: white;
+}
+
+.oddrow {
+	background-color: #fefff8;
+}
+
+.firstcell {
+	text-align: right;
+	font-weight:normal;
+	padding-right: 10px;
+}
+
+.headcell {
+	background-color: #daebff;
+	text-align:center;
+	font-weight:bold;
+}
+
+.datacell {
+	text-align: right;
+	width:100px;
+	font-weight:normal;
+}
+
+.simple_stat {
+	padding: 0px;
+}
+
+.simple_stat td {
+	padding: 3px;
+}
+
+.simple_stat .firstcell {
+	text-align: right;
+	vertical-align: top;
+	font-weight:normal;
+}
+
+.simple_stat .datacell {
+	text-align: left;
+	font-weight:normal;
+	padding-left: 10px;
+	width: inherit;
+}
+
+.simple_stat .oddrow {
+	background-color: white;
+}

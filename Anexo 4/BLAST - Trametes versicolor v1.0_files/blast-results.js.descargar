@@ -1,0 +1,255 @@
+
+updateDataOnScreenComplete = function () {
+	Richfaces.hideModalPanel('pleaseWaitModalBox');
+	closeOptionsPanel(jQuery);
+}
+
+updateDataOnScreen = function ($) {
+	pleaseWait();
+	return updateDataOnScreenA4j();
+}
+
+hitsTableOnComplete = function() {
+	setCheckboxesHooks(jQuery);
+}
+
+pleaseWait = function () {
+	Richfaces.showModalPanel('pleaseWaitModalBox', {
+		width : 200,
+		top : 200
+	});
+}
+
+activateConfigurePanel = function ($,e) {
+	var target = $('#limit_hit_config'); 
+	var top = e.pageY;
+	var left = e.pageX;
+	target.css('top', top);
+	target.css('left', left);
+	target.show('slow'); 
+	return false;	
+}
+
+closeOptionsPanel = function ($) {
+	var target = $('#limit_hit_config');
+	target.hide('slow');
+	return false;
+}
+
+post = function($,func,data,success) {
+	var url = "/ext-api/mycocosm/blast/"+func+"/"+contextId;
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: data,
+		success: success
+	});
+}
+
+disableOrEnableButtons = function($) {
+	var numSelected = 0;
+	$("[id^=sel_hit_]").each(function(i,v){
+		if (v.getAttribute('class').indexOf('not_selected')<0) {
+			++numSelected;
+		}
+	});
+	if (numSelected>0) {
+		$('#blast_result_export_as').prop("disabled",false);
+		$('#export_format_select').prop("disabled",false);
+		$('#export_gzip_select').prop("disabled",false);
+	} else {
+		$('#blast_result_export_as').prop("disabled",true);
+		$('#export_format_select').prop("disabled",true);
+		$('#export_gzip_select').prop("disabled",true);
+	}
+}
+
+selectOrDeselectHit = function ($,id,selected) {
+	var url = "/ext-api/mycocosm/blast/select-hit/"+contextId;
+	var data = "hitId="+id+"&selected="+selected;
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: data,
+		success: 
+			function(data,status,xhr){
+			var s = status;
+			disableOrEnableButtons($);
+		}
+	});
+}
+
+selectOrDeselectQuery = function ($,id,selected) {
+	var url = "/ext-api/mycocosm/blast/select-query/"+contextId;
+	var data = "queryId="+id+"&selected="+selected;
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: data,
+		success: 
+			function(data,status,xhr){
+			var s = status;
+			disableOrEnableButtons($);
+		}
+	});
+}
+
+selectInnerRectForCheckbox = function($,v,selected) {
+	var id = v.id;
+	if (id.indexOf("_p")<0) {
+		selectOrDeselectSvgCheckboxState(v.id,selected);
+	};
+} 
+
+selectOrDeselectQueryHits = function($,s,selected) {
+	$("#hit-summary-graph-"+s).find("[id^=sel_hit_]").each(function(i,v){
+		selectInnerRectForCheckbox($,v,selected);
+	});	
+}
+
+selectOrDeselectAllHits = function ($,selected) {
+	var url = "/ext-api/mycocosm/blast/select-hit-all/"+contextId;
+	var data = "selected="+selected;
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: data,
+		success: 
+			function(data,status,xhr){
+			var s = status;
+		}
+	});
+	$("[id^=hit-summary-graph-").find("[id^=sel_query_]").each(function(i,v) {
+		selectInnerRectForCheckbox($,v,selected);
+	});
+	$("[id^=hit-summary-graph-").find("[id^=sel_hit_]").each(function(i,v) {
+		selectInnerRectForCheckbox($,v,selected);
+	});
+	disableOrEnableButtons($);
+}
+
+exportAs = function($) {
+	var format = $('#export_format_select').val();
+	var compress = $('#export_gzip_select').val();
+	var url = '/ext-api/mycocosm/blast/export-as/'+format+'/'+compress+'/'+contextId;
+	navigateTo(url);
+}
+
+exportAsFasta = function($) {
+	var url = '/ext-api/mycocosm/blast/export-as-fasta/'+contextId;
+	navigateTo(url);
+}
+exportToExcel = function($) {
+	var url = '/ext-api/mycocosm/blast/export-to-excel/'+contextId;
+	navigateTo(url);
+}
+exportRawOutput = function(jobId) {
+	var url = '/ext-api/mycocosm/blast/rawoutput/'+contextId+'/'+jobId;
+	navigateTo(url);
+}
+openOldResultsUI = function($) {
+	var url = '/pages/blastResults.jsf?groupId='+groupId+"&db="+portalId;
+	navigateTo(url);
+}
+
+hitSelectAllOnClick = function(e,t) {
+	var checked = e.target.checked;
+	selectOrDeselectAllHits(jQuery,checked);
+}
+
+hitSelectOnClick = function(e,t) {
+	var checked = e.target.checked;
+	var id = e.target.id;
+	selectOrDeselectHit(jQuery,id,checked);
+}
+
+togglePanel = function ($,id) {
+	var url = "/ext-api/mycocosm/blast/toggle-panel/"+contextId;
+	var data = "panelId="+id;
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: data
+	});
+}
+
+toggleResultPanel = function (imgId, toToggleId) {
+	var e = jQuery("#"+toToggleId);
+	var dsp = e.css('display');
+	e.toggle("slow");
+	var image=jQuery("#"+imgId)[0]; 
+	if(dsp=='block') { 
+		image.src = '/images/expand.png';
+	} else {
+		image.src = '/images/collapse.png'; 
+	}
+	togglePanel(jQuery,toToggleId);
+}
+
+fixFormAction = function($) {
+	var form = $('#BlastForm')[0];
+	form.action = '/pages/blast-results.jsf;'+contextId+'?groupId='+groupId+'&db='+portalId;
+}
+
+toggle_select_hit = function(s) {
+	var selected = toggleSvgCheckboxState('sel_hit_'+s);
+	selectOrDeselectHit(jQuery,s,selected);
+	disableOrEnableButtons(jQuery);
+}
+
+toggle_select_query = function(s) {
+	var selected = toggleSvgCheckboxState('sel_query_'+s);
+	selectOrDeselectQueryHits(jQuery,s,selected);
+	selectOrDeselectQuery(jQuery,s,selected);
+	disableOrEnableButtons(jQuery);
+}
+
+toggleSort = function(s) {
+	post(jQuery,'toggle-sort',"sort="+s,function(data,status,xhr){
+		if (xhr.status==200) {
+			jQuery("#summary_graph_container").html(data);
+		}
+	});
+}
+
+saveFormat = function($,f) {
+	post($,'save-format',"format="+f);
+}
+
+saveGzip = function($,g) {
+	post($,'save-gzip',"gzip="+g);
+}
+
+
+jQuery.noConflict();
+jQuery(document).ready(function($) {
+	$('#blast_result_configure').click(function (e) {
+		activateConfigurePanel($,e);
+	});
+	$('#blast_results_options_close').click(function (e) {
+		closeOptionsPanel($);
+	});
+	$('#blast_results_options_close').mouseout(function (e) {
+		MM_swapImgRestore();
+	});
+	$('#blast_results_options_close').mouseover(function (e) {
+		MM_swapImage('blast_results_options_close','','/images/closeBtn_over.gif',1);
+	});
+	$('#blast_results_options_submit').click(function (e) {
+		updateDataOnScreen($);
+	});
+	$('#blast_result_export_as').click(function (e) {
+		exportAs($);
+	});
+	$('#export_format_select').change(function (e) {
+		var format = $('#export_format_select').val();
+		saveFormat($,format);
+	});
+	$('#export_gzip_select').change(function (e) {
+		var gzip = $('#export_gzip_select').val();
+		saveGzip($,gzip);
+	});
+	fixFormAction($);
+	disableOrEnableButtons($);
+});
+

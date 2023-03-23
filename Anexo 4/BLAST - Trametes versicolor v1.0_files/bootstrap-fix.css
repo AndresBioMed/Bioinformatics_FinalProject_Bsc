@@ -1,0 +1,45 @@
+.tooltip.show {
+	opacity: 1.0;
+}
+
+.tooltip-inner {
+	max-width: 400px;
+	padding: 0.6rem 0.6rem;
+	color: black;
+	text-align: center;
+	background-color: white;
+	border-radius: 0;
+	border: 1px solid gray;
+	box-shadow: 0 0 5px gray;
+}
+
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 10rem;
+}
+
+.dropdown-menu.show {
+	display: block;
+}
+
+.caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-bottom: 0px dotted;
+	border-left: 4px solid transparent;
+	content: "";
+}
+
+body a {
+	color: unset;
+}
